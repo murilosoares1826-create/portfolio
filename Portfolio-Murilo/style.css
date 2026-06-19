@@ -1,0 +1,311 @@
+/* =====================================================
+   PORTFÓLIO PREMIUM — MURILO SOARES
+   Estilo: Dark • Cinematográfico • Industrial • Agência
+   ===================================================== */
+
+/* --------------------
+   VARIÁVEIS GLOBAIS
+--------------------- */
+:root {
+  --black: #0a0a0a;
+  --dark: #111111;
+  --graphite: #1c1c1c;
+  --red-dark: #7a0000;
+  --red-glow: #b30000;
+  --white: #f5f5f5;
+  --gray: #9a9a9a;
+
+  --font-main: 'Inter', 'Poppins', Arial, sans-serif;
+  --font-title: 'Montserrat', 'Oswald', sans-serif;
+
+  --radius: 14px;
+  --transition: all 0.4s ease;
+}
+
+/* --------------------
+   RESET & BASE
+--------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: radial-gradient(circle at top, #140000, var(--black));
+  color: var(--white);
+  font-family: var(--font-main);
+  overflow-x: hidden;
+}
+
+/* TEXTURA INDUSTRIAL */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("noise.png");
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --------------------
+   CONTAINER PADRÃO
+--------------------- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* --------------------
+   HERO / CAPA
+--------------------- */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    120deg,
+    rgba(122, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.9)
+  );
+}
+
+.hero-content {
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-family: var(--font-title);
+  font-size: clamp(3rem, 6vw, 5rem);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.hero h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--red-glow), transparent);
+}
+
+.hero h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--gray);
+  margin-bottom: 30px;
+}
+
+.hero p {
+  max-width: 600px;
+  line-height: 1.7;
+  color: #d6d6d6;
+}
+
+/* --------------------
+   SEÇÕES
+--------------------- */
+section {
+  margin-bottom: 120px;
+}
+
+.section-title {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.section-title::before {
+  content: "—";
+  color: var(--red-glow);
+  margin-right: 10px;
+}
+
+/* --------------------
+   SOBRE MIM
+--------------------- */
+.about {
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.03),
+    rgba(255, 255, 255, 0.01)
+  );
+  backdrop-filter: blur(10px);
+  border-radius: var(--radius);
+  padding: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.about p {
+  line-height: 1.8;
+  color: #cccccc;
+}
+
+/* --------------------
+   SERVIÇOS
+--------------------- */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: linear-gradient(
+    160deg,
+    var(--graphite),
+    var(--dark)
+  );
+  padding: 30px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(179,0,0,0.25), transparent);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.service-card:hover::after {
+  opacity: 1;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 60px rgba(179, 0, 0, 0.2);
+}
+
+.service-card h3 {
+  font-family: var(--font-title);
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+/* --------------------
+   DIFERENCIAIS
+--------------------- */
+.differentials {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+.diff-item {
+  padding: 20px;
+  border-left: 3px solid var(--red-glow);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.diff-item span {
+  color: var(--gray);
+  font-size: 0.95rem;
+}
+
+/* --------------------
+   PORTFÓLIO / GALERIA
+--------------------- */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+  filter: grayscale(20%) contrast(110%);
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+.portfolio-item::after {
+  content: "Ver projeto";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.7);
+  opacity: 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.portfolio-item:hover::after {
+  opacity: 1;
+}
+
+/* --------------------
+   CONTATO
+--------------------- */
+.contact {
+  text-align: center;
+}
+
+.contact p {
+  color: var(--gray);
+  margin-bottom: 20px;
+}
+
+.contact a {
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  color: var(--white);
+  background: linear-gradient(135deg, var(--red-glow), var(--red-dark));
+  transition: var(--transition);
+}
+
+.contact a:hover {
+  box-shadow: 0 0 30px rgba(179, 0, 0, 0.6);
+  transform: translateY(-3px);
+}
+
+/* --------------------
+   FOOTER
+--------------------- */
+footer {
+  padding: 40px 20px;
+  text-align: center;
+  color: #666;
+  font-size: 0.85rem;
+}
