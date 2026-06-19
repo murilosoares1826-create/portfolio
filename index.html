@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Murilo Soares | Portfólio Premium</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+
+  background:#05060a;
+  color:#fff;
+  overflow-x:hidden;
+}
+
+/* ===== ANIMAÇÃO DE ENTRADA ===== */
+section{
+  padding:110px 8%;
+  opacity:0;
+  transform:translateY(40px);
+  animation:fadeUp 1s forwards;
+}
+
+section:nth-child(2){animation-delay:.2s}
+section:nth-child(3){animation-delay:.4s}
+section:nth-child(4){animation-delay:.6s}
+section:nth-child(5){animation-delay:.8s}
+section:nth-child(6){animation-delay:1s}
+
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.section-title{
+  text-align:center;
+  font-size:2.6rem;
+  margin-bottom:60px;
+}
+
+.section-title span{
+  color:#ff8c00;
+}
+
+/* ===== HERO ===== */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:60px 20px;
+  background: radial-gradient(circle at top,#111,#05060a);
+  position:relative;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:600px;
+  height:600px;
+  background:radial-gradient(circle,rgba(255,140,0,.2),transparent 70%);
+  filter:blur(90px);
+  top:-150px;
+  right:-150px;
+}
+
+.hero h1{
+  font-size:3.8rem;
+  letter-spacing:2px;
+}
+
+.hero span{
+  color:#ff8c00;
+}
+
+.hero p{
+  max-width:750px;
+  margin:20px auto 40px;
+  opacity:.85;
+  font-size:1.1rem;
+}
+
+.btn{
+  padding:16px 42px;
+  border-radius:50px;
+  background:linear-gradient(45deg,#ff8c00,#ffb347);
+  color:#000;
+  font-weight:700;
+  text-decoration:none;
+  transition:.3s;
+  display:inline-block;
+  box-shadow:0 0 25px rgba(255,140,0,.5);
+}
+
+.btn:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 45px rgba(255,140,0,.8);
+}
+
+/* ===== CARDS ===== */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:linear-gradient(145deg,#0c0d12,#11141c);
+  padding:35px;
+  border-radius:18px;
+  border:1px solid rgba(255,140,0,.15);
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 35px rgba(255,140,0,.2);
+}
+
+.card h4{
+  color:#ff8c00;
+  margin-bottom:10px;
+}
+
+/* ===== CASES ===== */
+.case{
+  background:#0c0d12;
+  padding:30px;
+  border-radius:18px;
+  border:1px solid rgba(255,140,0,.15);
+  transition:.4s;
+}
+
+.case:hover{
+  transform:translateY(-8px);
+  box-shadow:0 0 35px rgba(255,140,0,.25);
+}
+
+.case h3{
+  color:#ff8c00;
+  margin-bottom:10px;
+}
+
+.case p{
+  opacity:.85;
+  margin-bottom:15px;
+}
+
+.case a{
+  display:inline-block;
+  padding:12px 25px;
+  border-radius:30px;
+  background:#ff8c00;
+  color:#000;
+  font-weight:700;
+  text-decoration:none;
+}
+
+/* ===== GALERIA ===== */
+.galeria{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:22px;
+}
+
+.galeria img{
+  width:100%;
+  border-radius:16px;
+  filter:blur(3px);
+  transform:scale(.98);
+  transition:.5s;
+  box-shadow:0 0 20px rgba(0,0,0,.4);
+}
+
+.galeria img:hover{
+  filter:blur(0);
+  transform:scale(1.08);
+  box-shadow:0 0 40px rgba(255,140,0,.4);
+}
+
+/* ===== RESULTADOS ===== */
+.result{
+  text-align:center;
+  background:rgba(255,140,0,.06);
+  padding:40px;
+  border-radius:18px;
+}
+
+.result h2{
+  font-size:3rem;
+  color:#ff8c00;
+}
+
+/* ===== WHATSAPP ===== */
+.whatsapp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  background:#25d366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:28px;
+  text-decoration:none;
+  box-shadow:0 0 20px rgba(37,211,102,.5);
+}
+
+/* ===== NOVO SOBRE MIM PREMIUM ===== */
+.sobre-box{
+  background:linear-gradient(145deg,#0c0d12,#11141c);
+  padding:40px;
+  border-radius:20px;
+  border:1px solid rgba(255,140,0,.25);
+  margin-bottom:40px;
+  box-shadow:0 0 40px rgba(255,140,0,.08);
+}
+
+.sobre-box h3{
+  color:#ff8c00;
+  margin-bottom:15px;
+}
+
+.sobre-box p{
+  opacity:.85;
+  line-height:1.7;
+}
+
+.help-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:25px;
+}
+
+.help-item{
+  background:#0c0d12;
+  padding:25px;
+  border-radius:16px;
+  border:1px solid rgba(255,140,0,.15);
+  transition:.3s;
+}
+
+.help-item:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 30px rgba(255,140,0,.2);
+}
+
+.help-item h4{
+  color:#ff8c00;
+  margin-bottom:10px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>Murilo <span>Soares</span></h1>
+    <p>Transformo ideias em marcas digitais de alto impacto, com design premium, autoridade visual e foco em gerar clientes reais.</p>
+  </div>
+</div>
+
+<!-- SOBRE MIM NOVO -->
+<section>
+  <h2 class="section-title">Sobre <span>Mim</span></h2>
+
+  <div class="sobre-box">
+    <h3>Quem sou eu</h3>
+    <p>
+      Sou Murilo Soares, especialista em criação de portfólios e presença digital premium.
+      Meu trabalho é transformar negócios comuns em marcas fortes, com autoridade, estética profissional e foco em conversão.
+    </p>
+  </div>
+
+  <h2 class="section-title">Como posso ajudar a empresa</h2>
+
+  <div class="help-grid">
+
+    <div class="help-item">
+      <h4>Autoridade Digital</h4>
+      <p>Posicionamento que aumenta confiança e valor da sua marca.</p>
+    </div>
+
+    <div class="help-item">
+      <h4>Design Premium</h4>
+      <p>Visual profissional que destaca sua empresa da concorrência.</p>
+    </div>
+
+    <div class="help-item">
+      <h4>Conversão</h4>
+      <p>Estruturas criadas para gerar clientes reais.</p>
+    </div>
+
+    <div class="help-item">
+      <h4>Posicionamento</h4>
+      <p>Construção de marca forte no digital.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CASES -->
+<section>
+  <h2 class="section-title">Casos <span>Reais</span></h2>
+
+  <div class="cards">
+
+    <div class="case">
+      <h3>Método Lucro Invisível</h3>
+      <p>Estrutura de vendas e posicionamento digital.</p>
+      <a href="https://metodo-lucro-invisivel-vzud4u4.gamma.site/" target="_blank">Ver Projeto</a>
+    </div>
+
+    <div class="case">
+      <h3>Sistema Base44</h3>
+      <p>Estrutura digital com foco em conversão.</p>
+      <a href="https://metodo-lucro-invisivel-a1444aa4.base44.app/" target="_blank">Ver Projeto</a>
+    </div>
+
+    <div class="case">
+      <h3>Portfólio Luciana</h3>
+      <p>Presença digital e autoridade profissional.</p>
+      <a href="https://luciana-barcella-1zv3lad.gamma.site/" target="_blank">Ver Projeto</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section>
+  <h2 class="section-title">Galeria de <span>Projetos</span></h2>
+  <div class="galeria">
+    <img src="imagens/projeto1.png">
+    <img src="imagens/projeto2.jpg">
+    <img src="imagens/projeto3.jpg">
+    <img src="imagens/projeto4.jpg">
+    <img src="imagens/projeto5.jpg">
+    <img src="imagens/projeto6.jpg">
+    <img src="imagens/projeto7.jpg">
+    <img src="imagens/projeto8.jpg">
+  </div>
+</section>
+
+<!-- RESULTADOS -->
+<section>
+  <h2 class="section-title">Resultados <span>Reais</span></h2>
+  <div class="cards">
+    <div class="result">
+      <h2>+95%</h2>
+      <p>Autoridade percebida</p>
+    </div>
+    <div class="result">
+      <h2>+120%</h2>
+      <p>Conversão média</p>
+    </div>
+    <div class="result">
+      <h2>9,0★</h2>
+      <p>Avaliação</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<section style="text-align:center">
+  <h2 class="section-title">Vamos <span>Conversar</span></h2>
+  <a class="btn" href="https://wa.me/5551997053934" target="_blank">Falar no WhatsApp</a>
+</section>
+
+<a class="whatsapp" href="https://wa.me/5551997053934" target="_blank">☎</a>
+
+</body>
+</html>
